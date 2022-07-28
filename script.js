@@ -1,21 +1,29 @@
+// elements
 let character = document.getElementById("character");
+let ground = document.getElementById("ground");
+let scoreSpan = document.querySelector(".score span");
+
+// parameters
+let score = 0;
+
 let characterBottom = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
 let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'));
 let characterWidth = parseInt(window.getComputedStyle(character).getPropertyValue('width'));
 let characterHeight = parseInt(window.getComputedStyle(character).getPropertyValue('height'));
 
-let ground = document.getElementById("ground");
 let groundBottom = parseInt(window.getComputedStyle(ground).getPropertyValue('bottom'));
 let groundRight = parseInt(window.getComputedStyle(ground).getPropertyValue('right'));
 let groundWidth = parseInt(window.getComputedStyle(ground).getPropertyValue('width'));
 let groundHeight = parseInt(window.getComputedStyle(ground).getPropertyValue('height'));
 
+// variables
 let isJumping = false;
+
+// timers
 let upTime;
 let downTime;
-let score = 0;
-let scoreSpan = document.querySelector(".score span");
 
+// functions
 function jump() {
     if (isJumping) return;
     upTime = setInterval(() => {
@@ -82,6 +90,9 @@ function showScore() {
     scoreSpan.innerHTML = score;
 }
 
+// init
 generateObstacles();
 setInterval(showScore, 1000);
+
+// events
 window.addEventListener("keydown", control);
