@@ -47,6 +47,9 @@ function generateObstacles() {
     obstacle.style.left = groundRight + groundWidth + "px";
     obstacles.appendChild(obstacle);
 
+    let randomTimeout = Math.floor(Math.random() * 1000) + 1000;
+
+
     let obstacleRight = -30;
     let obstacleBottom = 100;
     let obstacleWidth = 30;
@@ -59,12 +62,18 @@ function generateObstacles() {
         obstacle.style.bottom = obstacleBottom + "px";
         obstacle.style.width = obstacleWidth + "px";
         obstacle.style.height = obstacleHeight + "px";
+
+        if (characterRight >= obstacleRight - characterWidth &&
+            characterRight <= obstacleRight + obstacleWidth &&
+            characterBottom <= obstacleBottom + obstacleHeight) {
+            alert("Game Over");
+            clearInterval(obstacleInterval);
+            clearTimeout(obstacleTimeout);
+            location.reload();
+        }
     }
 
     let obstacleInterval = setInterval(moveObject, 10*2);
-    let obstacleTimeout = setTimeout(() => {
-        clearInterval(obstacleInterval);
-        obstacles.removeChild(obstacle);
-    }, groundRight + groundWidth + obstacleRight);
-
+    let obstacleTimeout = setTimeout(generateObstacles, randomTimeout);
 }
+
