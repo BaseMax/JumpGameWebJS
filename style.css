@@ -31,3 +31,8 @@ body {
     bottom: 100px;
     right: 0;
 }
+.score {
+    font-family: sans-serif;
+    margin-top: 10px;
+    margin-left: 10px;
+}

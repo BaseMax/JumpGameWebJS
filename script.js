@@ -11,6 +11,8 @@ let groundWidth = parseInt(window.getComputedStyle(ground).getPropertyValue('wid
 let isJumping = false;
 let upTime;
 let downTime;
+let score = 0;
+let scoreSpan = document.querySelector(".score span");
 
 function jump() {
     if (isJumping) return;
@@ -77,3 +79,9 @@ function generateObstacles() {
     let obstacleTimeout = setTimeout(generateObstacles, randomTimeout);
 }
 
+function showScore() {
+    score++;
+    scoreSpan.innerHTML = score;
+}
+
+setInterval(showScore, 1000);
