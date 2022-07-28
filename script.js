@@ -20,16 +20,15 @@ function jump() {
         if (characterBottom >= groundHeight + 250) {
             clearInterval(upTime);
             downTime = setInterval(() => {
-                if (characterBottom <= groundHeight) {
+                if (characterBottom <= groundHeight + 10) {
                     clearInterval(downTime);
                     isJumping = false;
                 }
                 characterBottom -= 10;
                 character.style.bottom = characterBottom + "px";
-            }, 10);
+            }, 20);
         }
-
-        characterBottom -= 10;
+        characterBottom += 10;
         character.style.bottom = characterBottom + "px";
         isJumping = true;
     }, 20);
@@ -68,7 +67,7 @@ function generateObstacles() {
         if (characterRight >= obstacleRight - characterWidth &&
             characterRight <= obstacleRight + obstacleWidth &&
             characterBottom <= obstacleBottom + obstacleHeight) {
-            alert("Game Over");
+            alert("Game Over, your score is: " + score);
             clearInterval(obstacleInterval);
             clearTimeout(obstacleTimeout);
             location.reload();
@@ -85,3 +84,4 @@ function showScore() {
 }
 
 setInterval(showScore, 1000);
+window.addEventListener("keydown", control);
