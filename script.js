@@ -16,6 +16,9 @@ let groundRight = parseInt(window.getComputedStyle(ground).getPropertyValue('rig
 let groundWidth = parseInt(window.getComputedStyle(ground).getPropertyValue('width'));
 let groundHeight = parseInt(window.getComputedStyle(ground).getPropertyValue('height'));
 
+// const variables
+const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
 // variables
 let isJumping = false;
 
@@ -92,7 +95,11 @@ function showScore() {
 
 // init
 generateObstacles();
+generateObstacles();
+generateObstacles();
+generateObstacles();
 setInterval(showScore, 1000);
 
 // events
 window.addEventListener("keydown", control);
+if (supportsTouch) window.addEventListener("touchstart", jump);
