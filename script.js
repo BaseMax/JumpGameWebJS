@@ -17,7 +17,7 @@ let groundWidth = parseInt(window.getComputedStyle(ground).getPropertyValue('wid
 let groundHeight = parseInt(window.getComputedStyle(ground).getPropertyValue('height'));
 
 // const variables
-const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+const supportsTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
 
 // variables
 let isJumping = false;
@@ -95,9 +95,9 @@ function showScore() {
 
 // init
 generateObstacles();
-generateObstacles();
-generateObstacles();
-generateObstacles();
+// generateObstacles();
+// generateObstacles();
+// generateObstacles();
 setInterval(showScore, 1000);
 
 // events
