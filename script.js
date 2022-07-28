@@ -47,12 +47,9 @@ function generateObstacles() {
     let obstacles = document.querySelector(".obstacles");
     let obstacle = document.createElement("div");
     obstacle.classList.add("obstacle");
-    obstacle.style.left = groundRight + groundWidth + "px";
     obstacles.appendChild(obstacle);
 
     let randomTimeout = Math.floor(Math.random() * 1000) + 1000;
-
-
     let obstacleRight = -30;
     let obstacleBottom = 100;
     let obstacleWidth = 30;
@@ -85,5 +82,6 @@ function showScore() {
     scoreSpan.innerHTML = score;
 }
 
+generateObstacles();
 setInterval(showScore, 1000);
 window.addEventListener("keydown", control);
