@@ -2,12 +2,13 @@ let character = document.getElementById("character");
 let characterBottom = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
 let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'));
 let characterWidth = parseInt(window.getComputedStyle(character).getPropertyValue('width'));
+let characterHeight = parseInt(window.getComputedStyle(character).getPropertyValue('height'));
 
 let ground = document.getElementById("ground");
 let groundBottom = parseInt(window.getComputedStyle(ground).getPropertyValue('bottom'));
 let groundRight = parseInt(window.getComputedStyle(ground).getPropertyValue('right'));
 let groundWidth = parseInt(window.getComputedStyle(ground).getPropertyValue('width'));
-let groundHeight = groundBottom - characterBottom;
+let groundHeight = parseInt(window.getComputedStyle(ground).getPropertyValue('height'));
 
 let isJumping = false;
 let upTime;
