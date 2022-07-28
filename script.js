@@ -27,7 +27,8 @@ let upTime;
 let downTime;
 
 // functions
-function jump() {
+function jump()
+{
     if (isJumping) return;
     upTime = setInterval(() => {
         if (characterBottom >= groundHeight + 250) {
@@ -47,14 +48,15 @@ function jump() {
     }, 20);
 }
 
-function control(e) {
+function control(e)
+{
     if (e.key === "ArrowUp" || e.key === ' ') {
         jump();
     }
-
 }
 
-function generateObstacles() {
+function generateObstacles()
+{
     let obstacles = document.querySelector(".obstacles");
     let obstacle = document.createElement("div");
     obstacle.classList.add("obstacle");
@@ -67,7 +69,8 @@ function generateObstacles() {
     let obstacleHeight = Math.floor(Math.random() * 50) + 50;
     obstacle.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
 
-    function moveObject() {
+    function moveObject()
+    {
         obstacleRight += 5;
         obstacle.style.right = obstacleRight + "px";
         obstacle.style.bottom = obstacleBottom + "px";
@@ -88,16 +91,14 @@ function generateObstacles() {
     let obstacleTimeout = setTimeout(generateObstacles, randomTimeout);
 }
 
-function showScore() {
+function showScore()
+{
     score++;
     scoreSpan.innerHTML = score;
 }
 
 // init
 generateObstacles();
-// generateObstacles();
-// generateObstacles();
-// generateObstacles();
 setInterval(showScore, 1000);
 
 // events
