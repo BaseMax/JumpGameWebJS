@@ -11,5 +11,6 @@ This game supports both **Phones** and **Desktops** as well.
 ### TODO
 
 - Playing sound by javascript
+- Removing hidden obstacles to optimum the page DOM
 
 Source of the idea: https://www.youtube.com/watch?v=a0TyCnFgqlk
