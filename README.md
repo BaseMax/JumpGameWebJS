@@ -1,6 +1,6 @@
 # Jump Game Web JS
 
-A web-based game designed by Javascript is a jumping game where you can jump by pressing the key or touching the screen and many obstacles will come for you.
+A web-based game designed by JavaScript is a jumping game where you can jump by pressing the key or touching the screen and many obstacles will come for you.
 
 This game supports both **Phones** and **Desktops** as well.
 
