@@ -8,4 +8,8 @@ This game supports both **Phones** and **Desktops** as well.
 
 [![Jump Game Web JS](preview.jpg)](https://basemax.github.io/JumpGameWebJS/)
 
+### TODO
+
+- Playing sound by javascript
+
 Source of the idea: https://www.youtube.com/watch?v=a0TyCnFgqlk
