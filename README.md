@@ -1,7 +1,11 @@
 # Jump Game Web JS
 
-Demo: https://basemax.github.io/JumpGameWebJS/
+A web-based game designed by Javascript is a jumping game where you can jump by pressing the key or touching the screen and many obstacles will come for you.
+
+This game supports both **Phones** and **Desktops** as well.
+
+**Demo:** https://basemax.github.io/JumpGameWebJS/
 
 [![Jump Game Web JS](preview.jpg)](https://basemax.github.io/JumpGameWebJS/)
 
-Source: https://www.youtube.com/watch?v=a0TyCnFgqlk
+Source of the idea: https://www.youtube.com/watch?v=a0TyCnFgqlk
